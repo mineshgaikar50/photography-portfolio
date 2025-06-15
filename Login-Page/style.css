@@ -1,0 +1,358 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: syne;
+    line-height: 1.6;
+    background-color: #F3EBFA	;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    background: whitesmoke;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    border: 2px solid black;
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+}
+
+/* Footer Styling */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+.box{
+    border: 1px solid black;
+    padding: 1rem;
+    margin: 1rem; 
+    height: 50vh;
+    max-height: 80%;
+    width: 90%;
+    max-width: 600px;
+    overflow-y: auto;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+#Username{
+    width: 90%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#Password{
+    width: 90%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#button {
+    color: #090909;
+    padding: 0.8em 2em; /* Slightly larger padding for better clickability */
+    font-size: 16px; /* Adjusted font size for better readability */
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    width: 100%; /* Makes the button take full width of its container */
+    max-width: 300px; /* Prevents the button from becoming too wide */
+    margin: 0 auto; /* Centers the button horizontally */
+}
+
+button:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+button:hover {
+    background: #d8d8d8;
+    border: 1px solid #d8d8d8;
+}
+#Username:hover, 
+#Password:hover {
+    border-color: #FF69B4; /* Pink border color */
+    background-color: #FFF0F5; /* Light pink background */
+    transition: all 0.3s ease; /* Smooth transition effect */
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5); /* Pink shadow for emphasis */
+}
+
+/* Alternate hover effect with other colors */
+#Username:hover:nth-child(2n), 
+#Password:hover:nth-child(2n) {
+    border-color: #FFA500; /* Orange border color */
+    background-color: #FFE4B5; /* Light orange background */
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.5); /* Orange shadow */
+}
+
+#Username:hover:nth-child(3n), 
+#Password:hover:nth-child(3n) {
+    border-color: #8A2BE2; /* Violet border color */
+    background-color: #E6E6FA; /* Light violet background */
+    box-shadow: 0 0 5px rgba(138, 43, 226, 0.5); /* Violet shadow */
+}
+
+#Username:hover:nth-child(4n), 
+#Password:hover:nth-child(4n) {
+    border-color: #FF0000; /* Red border color */
+    background-color: #FFE4E1; /* Light red background */
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Red shadow */
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: whitesmoke;
+    padding: 1rem 2rem;
+    color: black;
+    
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    color: #FFA500; /* Orange hover effect */
+}
+
+/* Hamburger Menu (Hidden by Default) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.3rem;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        background-color: #E8CFC1;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu */
+    }
+}
+.container{
+    width: 90%; /* Adjust width as needed */
+    max-width: 600px; /* Prevent it from becoming too wide */
+    margin: 1rem auto; /* Center the box horizontally */
+    padding: 1rem; /* Add space inside the box */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #FFF5F0; /* Light background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 16px; /* Adjust font size for readability */
+    color: #333; /* Text color */
+    line-height: 1.5;
+     
+}
+.image-box{
+    position: absolute; /* Position it relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */    
+    z-index: -1; /* Places it behind other content */
+    opacity: 40%;
+}
+.service-container{
+     display: flex;
+    padding: 20px;
+    margin: 2%;
+    border: 4px solid #fff; /* Thicker border for glow */
+    border-radius: 16px;     /* Rounded corners for a modern look */
+     background: linear-gradient(135deg, #fff 0%, #f3f3f3 100%);        /* Dark background for better glow visibility */
+    box-shadow:
+          0 0 8px 2px #fff,
+        0 0 16px 4px #f3f3f3,
+        0 0 24px 8px #e0e0e0,
+        0 0 32px 12px #cccccc;
+    transition: box-shadow 0.3s;
+    height: fit-content;
+    font-family: 'Syne', sans-serif;
+     font-weight: 700;
+}
+/* From Uiverse.io by janisar-hyder */ 
+img {
+  display: block;
+  max-width: 60%;
+}
+
+.stack {
+    margin: 4% auto;
+  width: 55%;
+  max-width: 400px;
+  transition: 0.25s ease;
+  &:hover {
+    transform: rotate(5deg);
+    .card:before {
+      transform: translatey(-2%) rotate(-4deg);
+    }
+    .card:after {
+      transform: translatey(2%) rotate(4deg);
+    }
+  }
+}
+
+.card {
+  aspect-ratio: 3 / 2;
+  border: 4px solid;
+  background-color: #fff;
+  position: relative;
+  transition: 0.15s ease;
+  cursor: pointer;
+  padding: 5% 5% 15% 5%;
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 4px solid;
+    background-color: #fff;
+    transform-origin: center center;
+    z-index: -1;
+    transition: 0.15s ease;
+    top: 0;
+    left: 0;
+  }
+
+  &:before {
+    transform: translatey(-2%) rotate(-6deg);
+  }
+
+  &:after {
+    transform: translatey(2%) rotate(6deg);
+  }
+}
+.image {
+  width: 100%;
+  border: 4px solid;
+  background-color: #eee;
+  aspect-ratio: 1 / 1;
+  position: relative;
+}
+
+.browser-warning {
+  margin-bottom: 4rem;
+}
+
+@supports (aspect-ratio: 1 / 1) {
+  .browser-warning {
+    display: none;
+  }
+}
+
+/* Base styling */
+.upload-box {
+  width: 90%;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1rem;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #fafafa;
+  font-family: Arial, sans-serif;
+}
+
+#preview {
+  margin-top: 1rem;
+  max-width: 100%;
+  height: auto;
+  display: none;
+  border-radius: 10px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
